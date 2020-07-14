@@ -6,7 +6,6 @@ import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
 import handler.WebsocketHandler;
-import handler.WebsocketHandler2;
 
 @Configuration
 @EnableWebSocket
@@ -16,7 +15,6 @@ public class WebsocketConfig implements WebSocketConfigurer{
         //연결할 handelr path = / , 
         //CORS setAllowedOrigins('*')
         //SockJS withSockJS
-        registry.addHandler(new WebsocketHandler(), "/").setAllowedOrigins("*").withSockJS();
-        registry.addHandler(new WebsocketHandler2(), "/chatting2").setAllowedOrigins("*").withSockJS();
+        registry.addHandler(new WebsocketHandler(), "/chatting").setAllowedOrigins("*").withSockJS();
     }
 }
